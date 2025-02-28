@@ -6,6 +6,11 @@ from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_groq import ChatGroq
+from langchain.vectorstores import FAISS  # Replace ChromaDB
+
+def create_vector_db(embeddings, documents):
+    return FAISS.from_documents(documents, embeddings)
+
 import os
 import tempfile
 import sqlite3
