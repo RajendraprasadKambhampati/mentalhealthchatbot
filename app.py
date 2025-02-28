@@ -8,6 +8,9 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_groq import ChatGroq
 import os
 import tempfile
+import sqlite3
+
+os.environ["PYTHON_SQLITE_PATH"] = sqlite3.__file__
 
 def initialize_llm():
     llm = ChatGroq(
